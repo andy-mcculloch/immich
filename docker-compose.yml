@@ -22,6 +22,8 @@ services:
       - /etc/localtime:/etc/localtime:ro
     # env_file:
     #   - stack.env
+    networks:
+      - proxy
     ports:
       - '2283:2283'
     depends_on:
