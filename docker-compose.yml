@@ -24,8 +24,8 @@ services:
     #   - stack.env
     networks:
       - proxy
-    ports:
-      - '2283:2283'
+    # ports:
+    #   - '2283:2283'
     depends_on:
       - redis
       - database
