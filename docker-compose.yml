@@ -84,3 +84,7 @@ services:
 
 volumes:
   model-cache:
+
+networks:
+  proxy:
+    external: true
