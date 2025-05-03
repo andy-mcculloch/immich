@@ -32,9 +32,9 @@ services:
       disable: false
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.whoami.rule=Host(`immich2.${DOMAIN}`)"
-      - "traefik.http.routers.whoami.entrypoints=websecure"
-      - "traefik.http.routers.whoami.tls.certresolver=le_dns"       
+      - "traefik.http.routers.immich.rule=Host(`immich2.${DOMAIN}`)"
+      - "traefik.http.routers.immich.entrypoints=websecure"
+      - "traefik.http.routers.immich.tls.certresolver=le_dns"       
 
   immich-machine-learning:
     container_name: immich_machine_learning
