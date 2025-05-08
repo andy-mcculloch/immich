@@ -26,7 +26,7 @@ services:
       - proxy
       - immich
     # ports:
-      - '2283:2283'
+      # - '2283:2283'
     depends_on:
       - redis
       - database
@@ -34,10 +34,11 @@ services:
     healthcheck:
       disable: false
     labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.immich.rule=Host(`immich.${DOMAIN}`)"
-      - "traefik.http.routers.immich.entrypoints=websecure"
-      - "traefik.http.routers.immich.tls.certresolver=le_dns"       
+      - traefik.enable=true
+      - traefik.docker.network=proxy
+      - traefik.http.routers.immich.rule=Host(`immich.${DOMAIN}`)
+      - traefik.http.routers.immich.entrypoints=websecure
+      - traefik.http.routers.immich.tls.certresolver=le_dns"      
 
   immich-machine-learning:
     container_name: immich_machine_learning
