@@ -50,6 +50,10 @@ services:
     #   service: cpu # set to one of [armnn, cuda, rocm, openvino, openvino-wsl, rknn] for accelerated inference - use the `-wsl` version for WSL2 where applicable
     networks:
       - immich
+    dns:
+      - ${DNS_IP1}
+      - ${DNS_IP2}
+    dns_search: ${DOMAIN}
     volumes:
       - model-cache:/cache
     # env_file:
