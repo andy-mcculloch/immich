@@ -24,7 +24,7 @@ services:
     #   - stack.env
     networks:
       - proxy-vlan
-        # mac_address: ${PROXY_VLAN_MAC}
+        mac_address: ${PROXY_VLAN_MAC}
       - immich
     # ports:
       # - '2283:2283'
